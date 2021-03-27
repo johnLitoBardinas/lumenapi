@@ -17,3 +17,17 @@ Bring Up container (run containers in background)
 
 Run artisan container (when php not installed in machine)
 > docker-compose up --rm artisan [artisan command]
+
+
+### Default Database Credentials
+
+You can change the default mysql environment variables here at `mysql` inside `docker-compose.yml` file.
+**This is only for local development**
+
+<!-- Tables -->
+| MYSQL     | Email          |
+| -------- | -------------- |
+| MYSQL_DATABASE | lumen |
+| MYSQL_USER | lumen |
+| MYSQL_PASSWORD | secret |
+| MYSQL_ROOT_PASSWORD | secret |
