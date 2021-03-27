@@ -1,0 +1,86 @@
+version: '3.7'
+
+networks: 
+  lumen-network:
+
+services:
+  
+  nginx:
+    image: nginx:latest
+    container_name: nginx-lumen
+    ports: 
+      - '80:80'
+    volumes: 
+      - .lemp/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - .lemp/nginx:/var/log/nginx
+      - .:/var/www/html
+    depends_on: 
+      - php
+      - mysql
+    networks: 
+      - lumen-network
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-lumen
+    restart: unless-stopped
+    tty: true
+    ports: 
+      - '3306:3306'
+    volumes: 
+      - .lemp/mysql/:/var/lib/mysql
+    environment: 
+      MYSQL_DATABASE: lumen
+      MYSQL_USER: lumen
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret
+    networks: 
+      - lumen-network
+
+  php:
+    build: 
+      context: .lemp
+      dockerfile: php.Dockerfile
+    image: custom-php
+    container_name: php-lumen
+    volumes: 
+      - .:/var/www/html
+    ports: 
+      - '9000:9000'
+    networks: 
+      - lumen-network
+
+  # composer:
+  #   image: composer:latest
+  #   container_name: composer-lumen
+  #   volumes: 
+  #     - .:/var/www/html
+  #   working_dir: /var/www/html
+  #   depends_on: 
+  #     - php
+  #   networks: 
+  #     - lumen-network
+
+  # npm:
+  #   image: node:13.7
+  #   container_name: npm-lumen
+  #   volumes: 
+  #     - .:/var/www/html
+  #   working_dir: /var/www/html
+  #   entrypoint: ['npm']
+  #   command: ['--version']
+
+  artisan:
+    build: 
+      context: .lemp
+      dockerfile: php.Dockerfile
+    container_name: artisan-lumen
+    tty: true
+    volumes: 
+      - .:/var/www/html
+    depends_on: 
+      - mysql
+    working_dir: /var/www/html
+    entrypoint: ['php', '/var/www/html/artisan'] # Pointing to the artisan command
+    networks: 
+      - lumen-network
