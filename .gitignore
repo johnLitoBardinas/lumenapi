@@ -7,3 +7,6 @@ Homestead.yaml
 
 # Local DB Data
 .lemp/mysql/
+
+# Local nginx Data
+.lemp/nginx/*.log
