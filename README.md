@@ -3,6 +3,7 @@
 Local Host URI: [http://luminapi.test](http://luminapi.test)
 
 ### Local Setup Requirements
+* Place a folder `.lemp/{mysql}` to hold local database data
 * [Docker](https://www.docker.com/)
 * [Docker Compose](https://docs.docker.com/compose/)
 
