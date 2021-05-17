@@ -6,6 +6,8 @@
     "type": "project",
     "require": {
         "php": "^7.3|^8.0",
+        "doctrine/inflector": "1.4.0",
+        "laravel-doctrine/orm": "1.7.*",
         "laravel/lumen-framework": "^8.0",
         "nunomaduro/phpinsights": "^1.14"
     },
@@ -36,6 +38,12 @@
     "scripts": {
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "tests": [
+            "./vendor/bin/phpunit"
+        ],
+        "insights": [
+            "php artisan insights"
         ]
     }
 }
