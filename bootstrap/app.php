@@ -95,6 +95,9 @@ $app->configure('app');
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 
+$app->register(\NunoMaduro\PhpInsights\Application\Adapters\Laravel\InsightsServiceProvider::class);
+$app->configure('insights');
+
 /*
 |--------------------------------------------------------------------------
 | Load The Application Routes
