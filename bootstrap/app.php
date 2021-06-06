@@ -23,7 +23,7 @@ $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
 
-// $app->withFacades();
+$app->withFacades();
 
 // $app->withEloquent();
 
@@ -59,6 +59,7 @@ $app->singleton(
 |
 */
 
+$app->configure('constants');
 $app->configure('app');
 
 /*
@@ -91,12 +92,15 @@ $app->configure('app');
 |
 */
 
-// $app->register(App\Providers\AppServiceProvider::class);
+$app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 
 $app->register(\NunoMaduro\PhpInsights\Application\Adapters\Laravel\InsightsServiceProvider::class);
 $app->configure('insights');
+
+$app->register(\Laravel\Tinker\TinkerServiceProvider::class);
+$app->configure('tinker');
 
 /*
 |--------------------------------------------------------------------------

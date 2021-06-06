@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Helpers\Importer;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,5 +14,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->singleton('importer', fn () => new Importer(config('constants.api_endpoint')));
     }
 }

@@ -1,0 +1,66 @@
+{
+    "result": [
+        {
+            "gender": "male",
+            "name": {
+                "title": "Mr",
+                "first": "Mike",
+                "last": "Parker"
+            },
+            "location": {
+                "street": {
+                    "number": 4900,
+                    "name": "Preston Rd"
+                },
+                "city": "Dubbo",
+                "state": "Western Australia",
+                "country": "Australia",
+                "postcode": 4693,
+                "coordinates": {
+                    "latitude": "-4.8454",
+                    "longitude": "-121.6392"
+                },
+                "timezone": {
+                    "offset": "+3:30",
+                    "description": "Tehran"
+                }
+            },
+            "email": "mike.parker@example.com",
+            "login": {
+                "uuid": "ba97a5e3-72eb-4ca7-98a4-3d8b11d996f8",
+                "username": "redelephant277",
+                "password": "luis",
+                "salt": "Ei5TXPCt",
+                "md5": "113cd4a576019cb9a35d2d801fd9c70e",
+                "sha1": "f518019e7bfb8466a5a586fef25e48f235d6d6dd",
+                "sha256": "08d756e4d9e189b2b722db69e7caa9c199d54f13d6b38c9fcbad4c9f6d427364"
+            },
+            "dob": {
+                "date": "1991-02-22T05:56:29.488Z",
+                "age": 30
+            },
+            "registered": {
+                "date": "2011-07-27T00:43:49.057Z",
+                "age": 10
+            },
+            "phone": "00-1855-3953",
+            "cell": "0458-051-431",
+            "id": {
+                "name": "TFN",
+                "value": "366029314"
+            },
+            "picture": {
+                "large": "https://randomuser.me/api/portraits/men/72.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/men/72.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/men/72.jpg"
+            },
+            "nat": "AU"
+        },
+    ],
+    "info": {
+        "seed":943f3987366e2061,
+        "results":100,
+        "page":1,
+        "version":"1.3"
+    }
+}

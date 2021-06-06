@@ -14,3 +14,19 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('customers', function(){
+    return 'TDD is fucking love';
+});
+
+$router->get('ss', function ()
+{
+  $result = app('importer')->fetch();
+
+  dd($result);
+
+});
+
+$router->get('customers/{id}', function($id) {
+    return $id;
+});

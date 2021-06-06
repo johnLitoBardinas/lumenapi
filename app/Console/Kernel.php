@@ -12,7 +12,9 @@ class Kernel extends ConsoleKernel
      *
      * @var array
      */
-    protected $commands = [];
+    protected $commands = [
+        'App\Console\Commands\ImportCustomers',
+    ];
 
     /**
      * Define the application's command schedule.
